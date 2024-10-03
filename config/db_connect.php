@@ -1,7 +1,7 @@
 <?php
 
 // connect to database
-$conn = mysqli_connect('localhost', 'root', 'roroot', 'pizzas');
+$conn = mysqli_connect('YOURHOST', 'YOURUSER', 'YOURPASS', 'YOURDB');
 
 //check connection
 if (!$conn) {
