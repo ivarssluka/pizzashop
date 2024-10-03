@@ -50,18 +50,18 @@ if (isset($_GET['id'])) {
         <h5>Created by: </h5>
         <p><?php echo htmlspecialchars($pizza['email']); ?></p>
         <h5>Created at: </h5>
-        <p><?php echo ($pizza['created_at']); ?></p>
+        <p><?php echo($pizza['created_at']); ?></p>
         <h5>Ingredients: </h5>
         <p><?php echo htmlspecialchars($pizza['ingredients']); ?></p>
 
-<!-- Delete form -->
+        <!-- Delete form -->
         <form action="details.php" method="post">
             <input type="hidden" name="id_to_delete" value="<?php echo $pizza['id']; ?>">
             <input type="submit" name="delete" value="Delete" class="btn brand z-depth-0">
         </form>
-    
+
     <?php else: ?>
-    <h5>No such pizza exists...</h5>
+        <h5>No such pizza exists...</h5>
 
     <?php endif; ?>
 </div>
