@@ -5,7 +5,7 @@ include 'config/db_connect.php';
 
 $title = $email = $ingredients = '';
 
-$errors = array('email' => '', 'pizza-title' => '', 'ingredients' => '');
+$errors = array('email' => '', 'title' => '', 'ingredients' => '');
 
 if (isset($_POST['submit'])) {
 
@@ -17,12 +17,12 @@ if (isset($_POST['submit'])) {
             $errors['email'] = "Email must be a valid email address" . '<br>';
         }
     }
-    if (empty($_POST['pizza-title'])) {
-        $errors['pizza-title'] = 'Please enter a pizza title' . '<br>';
+    if (empty($_POST['title'])) {
+        $errors['title'] = 'Please enter a pizza title' . '<br>';
     } else {
-        $title = $_POST['pizza-title'];
+        $title = $_POST['title'];
         if (!preg_match('/^[a-zA-Z\s]+$/', $title)) {
-            $errors['pizza-title'] = 'Title must be letters and spaces only' . '<br>';
+            $errors['title'] = 'Title must be letters and spaces only' . '<br>';
         }
     }
     if (empty($_POST['ingredients'])) {
@@ -69,9 +69,9 @@ if (isset($_POST['submit'])) {
         <label for="email">Your Email:</label>
         <input type="email" name="email" id="email" value="<?php echo htmlspecialchars($email); ?>">
         <div class="red-text"><?php echo $errors['email']; ?></div>
-        <label for="pizza-title">Pizza Title:</label>
-        <input type="text" name="pizza-title" id="pizza-title" value="<?php echo htmlspecialchars($title); ?>">
-        <div class="red-text"><?php echo $errors['pizza-title']; ?></div>
+        <label for="title">Pizza Title:</label>
+        <input type="text" name="title" id="title" value="<?php echo htmlspecialchars($title); ?>">
+        <div class="red-text"><?php echo $errors['title']; ?></div>
         <label for="ingredients">Ingredients (comma seperated):</label>
         <input type="text" name="ingredients" id="ingredients" value="<?php echo htmlspecialchars($ingredients); ?>">
         <div class="red-text"><?php echo $errors['ingredients']; ?></div>
